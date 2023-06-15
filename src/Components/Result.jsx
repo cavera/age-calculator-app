@@ -2,7 +2,9 @@ import React from 'react'
 
 const Result = ({ value, content }) => {
   return (
-    <p><span>{value}</span> {content}</p>
+    <p className='result'>
+      <span className='result-value'>{value}</span> {content}
+    </p>
   )
 }
 

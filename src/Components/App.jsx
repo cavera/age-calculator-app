@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+// import { ReactComponent as Arrow } from '../assets/icon-arrow.svg'
+import Arrow from '../assets/icon-arrow.svg'
 import InputGroup from './InputGroup'
 import Results from './Results'
 import Result from './Result'
@@ -30,12 +32,16 @@ const App = () => {
   }
 
   return (
-    <main>
+    <main className='calculator'>
       <form onSubmit={e => handleSubmit(e)}>
         <InputGroup name='Day' placeholder='DD' id='day' />
         <InputGroup name='Month' placeholder='MM' id='month' />
         <InputGroup name='Year' placeholder='YYYY' id='year' />
-        <button type='submit'>calculate</button>
+        <div className='button-container'>
+          <button type='submit'>
+            <img src={Arrow} alt='' />
+          </button>
+        </div>
       </form>
       <Results>
         <Result value={years > 0 ? years : '--'} content='years' />
