@@ -13,7 +13,6 @@ export const useDateCalc = ({ day, month, year }) => {
     const birth = new Date(inputYear, inputMonth, inputDay)
     const daysXYear = 365.25
 
-    console.log(inputYear, inputMonth, inputDay)
     const life = today.getTime() - birth.getTime()
 
     const elapsedHours = life / 3600000
@@ -50,11 +49,10 @@ export const useMaxDate = ({ year, month }) => {
     const days = date.getDate()
 
     setMaxVal({
-      year: inputYear,
+      year: today.getUTCFullYear(),
       month: 12,
       day: days
     })
-    // console.log({ inputYear, inputMonth, days })
   }, [month, year])
 
   return { maxVal }

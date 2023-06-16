@@ -1,52 +1,20 @@
-import React, { useState, useRef, useEffect, useContext } from 'react'
-import { AgeContext } from '../Context/AgeContext'
+import React, { useRef } from 'react'
+import { useDateInput } from '../hooks/useDateInput'
 
 const InputGroup = ({ name, id, placeholder }) => {
-  const [inputval, setInputval] = useState('')
-  const [inputState, setInputState] = useState('')
-
-  const { maxVal, setMonth } = useContext(AgeContext)
-
   const inputRef = useRef()
+  const maxLen = placeholder.length
 
-  const requiredString = 'This field is required'
-  const invalidString =
-    id !== 'year' ? `Must be a valid ${id}` : 'Must be in the past'
-
-  useEffect(() => {
-    if (inputval > maxVal[id]) {
-      setInputState('invalid')
-      setInputval(invalidString)
-    } else {
-      setInputState('')
-      setInputval('')
-    }
-  }, [maxVal])
+  const { inputState, inputStates, inputChange, updateInput } = useDateInput(
+    inputRef,
+    id
+  )
 
   const handleChange = e => {
     const value = inputRef.current.value
-
-    if (id === 'month') {
-      setMonth(value)
-    }
-
-    if (value.match(/[0-9]/)) {
-      setInputval(value)
-      e.target.value = value
-    } else {
-      setInputval('')
-      e.target.value = ''
-    }
-    if (value > maxVal[id]) {
-      setInputState('invalid')
-      setInputval(invalidString)
-    } else {
-      setInputState('')
-      setInputval('')
-    }
+    updateInput[id](value)
+    inputChange()
   }
-
-  const maxLen = placeholder.length
 
   return (
     <div className={`input-group ${inputState}`}>
@@ -59,14 +27,14 @@ const InputGroup = ({ name, id, placeholder }) => {
           id={id}
           placeholder={placeholder}
           defaultValue={''}
-          required
+          // required
           minLength={1}
           maxLength={maxLen}
           onChange={handleChange}
           autoComplete='off'
         />
       </label>
-      <p className='input-group--text'>{inputval}</p>
+      <p className='input-group--text'>{inputStates[inputState]}</p>
     </div>
   )
 }

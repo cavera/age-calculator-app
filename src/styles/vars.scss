@@ -1,3 +1,5 @@
+$bkp-desktop:692px;
+
 :root {
   // colors
   --Purple: #854dff;
@@ -11,6 +13,7 @@
   // measures
 	--Mobile: 480px;
 	--Desktop: 1440px;
+
 
 	--Font-size-inputs: 32px;
 
@@ -51,7 +54,7 @@
 	}
 }
 
-@media (min-width:481px) {
+@media (min-width:$bkp-desktop) {
 	:root{
 		--btn-size: 96px;
 		--max-width: 840px;
@@ -67,3 +70,4 @@
 		--fz-result:102px;
 	}
 }
+

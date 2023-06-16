@@ -55,7 +55,9 @@
       font-style: italic;
       color: var(--group-color);
     }
-    &.invalid{
+    &.invalid,
+    &.required
+    {
       --group-color:var(--Light-red);
       input{
         border-color: var(--group-color);
@@ -101,14 +103,15 @@
 	}
 }
 footer {
-	position: absolute;
+	position: fixed;
 	inset: auto 0 0;
 	padding: 10px;
   color: var(--text-color);
+  font-size: var(--fz-label);
 }
 
 
-@media (min-width:376px) {
+@media (min-width:$bkp-desktop) {
   .calculator{
     .inputs-container{
       display: flex;
@@ -117,6 +120,7 @@ footer {
     }
     .button-container {
       justify-content: end;
+      margin-bottom: 0;
     }
   }
 }
