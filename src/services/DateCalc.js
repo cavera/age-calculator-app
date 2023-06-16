@@ -6,15 +6,14 @@ export const useDateCalc = ({ day, month, year }) => {
   useEffect(() => {
     const today = new Date()
 
-    const inputDay = !day ? today.getDate() : day
-    const inputMonth = !month ? today.getMonth() : month
-    const inputYear = !year ? today.getFullYear() : year
+    const inputDay = !day ? today.getUTCDate() : day
+    const inputMonth = !month ? today.getUTCMonth() : month
+    const inputYear = !year ? today.getUTCFullYear() : year
 
     const birth = new Date(inputYear, inputMonth, inputDay)
     const daysXYear = 365.25
 
-    console.log(year)
-
+    console.log(inputYear, inputMonth, inputDay)
     const life = today.getTime() - birth.getTime()
 
     const elapsedHours = life / 3600000
@@ -27,15 +26,36 @@ export const useDateCalc = ({ day, month, year }) => {
     const tempTime = {
       years: Math.floor(years),
       months: Math.floor(months),
-      days: Math.round(days)
+      days: Math.floor(days)
     }
 
     setMytime(tempTime)
-
-    console.log(`${tempTime.years} years`)
-    console.log(`${tempTime.months} months`)
-    console.log(`${tempTime.days} days`)
   }, [day, month, year])
 
   return { mytime }
+}
+
+export const useMaxDate = ({ year, month }) => {
+  const [maxVal, setMaxVal] = useState({})
+
+  useEffect(() => {
+    const today = new Date()
+    const inputMonth = !month ? today.getUTCMonth() : month - 1
+    const inputYear = !year ? today.getUTCFullYear() : year
+    const date = new Date(inputYear, inputMonth, 1)
+
+    date.setMonth(date.getMonth() + 1)
+    date.setDate(date.getDate() - 1)
+
+    const days = date.getDate()
+
+    setMaxVal({
+      year: inputYear,
+      month: 12,
+      day: days
+    })
+    // console.log({ inputYear, inputMonth, days })
+  }, [month, year])
+
+  return { maxVal }
 }

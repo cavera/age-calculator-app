@@ -1,10 +1,5 @@
 # Frontend Mentor - Age calculator app
 
-## TODO
-- connect the invalid day input depending the month input
-- connect the submit behavior to the invalid state of any of the inputs
-- do all the required behavior
-
 ![Design preview for the Age calculator app coding challenge](./design/desktop-preview.jpg)
 
 ## Welcome! 👋
