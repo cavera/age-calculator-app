@@ -9,7 +9,7 @@
 	--text-color: #141414;
   
   // measures
-	--Mobile: 375px;
+	--Mobile: 480px;
 	--Desktop: 1440px;
 
 	--Font-size-inputs: 32px;
@@ -51,7 +51,7 @@
 	}
 }
 
-@media (min-width:376px) {
+@media (min-width:481px) {
 	:root{
 		--btn-size: 96px;
 		--max-width: 840px;
