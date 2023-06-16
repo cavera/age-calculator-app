@@ -3,28 +3,13 @@ import { AgeContext } from '../Context/AgeContext'
 
 const useDateInput = (inputRef, id) => {
   const [inputState, setInputState] = useState('normal')
-  const {
-    maxVal,
-    inputDay,
-    inputMonth,
-    required,
-    inputYear,
-    updateDay,
-    updateMonth,
-    updateYear,
-    setRequired
-  } = useContext(AgeContext)
+  const { maxVal, required, updateDay, updateMonth, updateYear, setRequired } =
+    useContext(AgeContext)
 
   const updateInput = {
     day: updateDay,
     month: updateMonth,
     year: updateYear
-  }
-
-  const inputNames = {
-    day: inputDay,
-    month: inputMonth,
-    year: inputYear
   }
 
   const inputStates = {
@@ -57,7 +42,6 @@ const useDateInput = (inputRef, id) => {
 
   useEffect(() => validateMaxVal(), [maxVal])
   useEffect(() => {
-    console.log('value', inputRef.current.value, inputRef.current.value.lenght)
     if (!inputRef.current.value) {
       setInputState('required')
     }

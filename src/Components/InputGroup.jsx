@@ -3,7 +3,6 @@ import { useDateInput } from '../hooks/useDateInput'
 
 const InputGroup = ({ name, id, placeholder }) => {
   const inputRef = useRef()
-  const maxLen = placeholder.length
 
   const { inputState, inputStates, inputChange, updateInput } = useDateInput(
     inputRef,
@@ -11,8 +10,7 @@ const InputGroup = ({ name, id, placeholder }) => {
   )
 
   const handleChange = e => {
-    const value = inputRef.current.value
-    updateInput[id](value)
+    updateInput[id](inputRef.current.value)
     inputChange()
   }
 
@@ -24,12 +22,9 @@ const InputGroup = ({ name, id, placeholder }) => {
           ref={inputRef}
           type='text'
           name={name}
-          id={id}
           placeholder={placeholder}
           defaultValue={''}
-          // required
-          minLength={1}
-          maxLength={maxLen}
+          maxLength={placeholder.length}
           onChange={handleChange}
           autoComplete='off'
         />

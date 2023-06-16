@@ -47,9 +47,9 @@ const App = () => {
         </div>
       </form>
       <Results>
-        <Result value={years > 0 ? years : '--'} content='years' />
-        <Result value={months > 0 ? months : '--'} content='months' />
-        <Result value={days > 0 ? days : '--'} content='days' />
+        <Result value={years} content='years' />
+        <Result value={months} content='months' />
+        <Result value={days} content='days' />
       </Results>
 
       <Footer />
