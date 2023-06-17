@@ -27,6 +27,7 @@ const InputGroup = ({ name, id, placeholder }) => {
           maxLength={placeholder.length}
           onChange={handleChange}
           autoComplete='off'
+          inputMode='numeric'
         />
       </label>
       <p className='input-group--text'>{inputStates[inputState]}</p>
