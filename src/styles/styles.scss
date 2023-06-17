@@ -107,6 +107,9 @@ footer {
   font-size: var(--fz-label);
 }
 
+.hidden{
+  display: none;
+}
 
 @media (min-width:$bkp-desktop) {
   .calculator{

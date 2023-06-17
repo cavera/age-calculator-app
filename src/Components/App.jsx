@@ -33,6 +33,7 @@ const App = () => {
   }
   return (
     <main className='calculator'>
+      <h1 className='hidden'>Age Calculator</h1>
       <form onSubmit={e => handleSubmit(e)}>
         <div className='inputs-container'>
           <InputGroup name='Day' placeholder='DD' id='day' />
@@ -42,6 +43,7 @@ const App = () => {
         <div className='button-container'>
           <button type='submit'>
             <img src={Arrow} alt='' />
+            <span className='hidden'>'calc'</span>
           </button>
         </div>
       </form>
