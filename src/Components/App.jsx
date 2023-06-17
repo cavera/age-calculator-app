@@ -20,7 +20,6 @@ const App = () => {
 
   const handleSubmit = e => {
     e.preventDefault()
-    console.log(inputRefs)
     if (inputRefs.includes('')) {
       context.setRequired(true)
       return

@@ -110,14 +110,32 @@ footer {
 
 @media (min-width:$bkp-desktop) {
   .calculator{
+    border-bottom-right-radius: calc(var(--space) * 7);
     .inputs-container{
       display: flex;
       justify-content: start;
-      gap: 32px;
+      gap: 34px;
     }
+    .input-group{
+      label{
+        letter-spacing: 4px;
+      }
+      input{
+        margin-top: 10px;
+        padding: 23px;
+      }
+    }
+
     .button-container {
       justify-content: end;
       margin-bottom: 0;
+      margin-top: 0;
+    }
+    .result{
+      line-height: 1.1;
+      span{
+        letter-spacing: 18px;
+      }
     }
   }
 }

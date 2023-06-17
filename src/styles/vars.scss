@@ -45,22 +45,23 @@ $bkp-desktop:692px;
 	font-weight: var(--w400);
 }
 
-@media (prefers-color-scheme:dark){
-	:root{
-		--bg-color:#1d1a1f;
-		--card-color:#2e2931;
-		--text-color:#f0f0f0;
-		--input-color:#797777;
-	}
-}
+// @media (prefers-color-scheme:dark){
+// 	:root{
+// 		--bg-color:#1d1a1f;
+// 		--card-color:#2e2931;
+// 		--text-color:#f0f0f0;
+// 		--input-color:#797777;
+// 	}
+// }
 
 @media (min-width:$bkp-desktop) {
 	:root{
+		--space: 28px;
 		--btn-size: 96px;
 		--max-width: 840px;
 		--padding-h:calc(var(--space) * 2);
 
-		--fz-label:10px;
+		--fz-label:14px;
 		--fz-input:32px;
 		--fz-input-text:10px;
 

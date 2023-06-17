@@ -24,10 +24,8 @@ const Result = ({ value, content }) => {
   return (
     <p className='result'>
       <span className='result-value'>
-        {!resultText.val || resultText.val === 0
-          ? '--'
-          : String(resultText.val)}
-      </span>{' '}
+        {!resultText.val || resultText.val <= 0 ? '--' : String(resultText.val)}
+      </span>
       {content}
     </p>
   )
