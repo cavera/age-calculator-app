@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect, useMemo } from 'react'
+import React, { useState, useEffect } from 'react'
 import { gsap } from 'gsap'
 
 const Result = ({ value, content }) => {

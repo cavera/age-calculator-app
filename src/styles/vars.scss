@@ -1,27 +1,25 @@
-$bkp-desktop:692px;
+$bkp-desktop: 692px;
 
 :root {
-  // colors
-  --Purple: #854dff;
+	// colors
+	--Purple: #854dff;
 	--Light-red: #ff5757;
 	--card-color: #fff;
 	--bg-color: #f0f0f0;
 	--Light-grey: #dbdbdb;
 	--input-color: #716f6f;
 	--text-color: #141414;
-  
-  // measures
+
+	// measures
 	--Mobile: 480px;
 	--Desktop: 1440px;
 
-
 	--Font-size-inputs: 32px;
 
-	--fz-label:10px;
-	--fz-input:20px;
-	--fz-input-text:8px;
-	--fz-result:52px;
-
+	--fz-label: 10px;
+	--fz-input: 20px;
+	--fz-input-text: 8px;
+	--fz-result: 52px;
 
 	--w400: 400;
 	--w700: 700;
@@ -32,43 +30,42 @@ $bkp-desktop:692px;
 	--space: 24px;
 	--btn-size: 64px;
 
-	--input-w:86px;
-	--input-h:52px;
+	--input-w: 86px;
+	--input-h: 52px;
 
-	--padding-h:var(--space);
-	--padding-v:calc(var(--space) * 2);
+	--padding-h: var(--space);
+	--padding-v: calc(var(--space) * 2);
 
-  // iniciales
+	// iniciales
 	font-family: 'Poppins', sans-serif;
 	background-color: var(--bg-color);
 	color: var(--Smokey-grey);
 	font-weight: var(--w400);
 }
 
-// @media (prefers-color-scheme:dark){
-// 	:root{
-// 		--bg-color:#1d1a1f;
-// 		--card-color:#2e2931;
-// 		--text-color:#f0f0f0;
-// 		--input-color:#797777;
-// 	}
-// }
-
-@media (min-width:$bkp-desktop) {
-	:root{
-		--space: 28px;
-		--btn-size: 96px;
-		--max-width: 840px;
-		--padding-h:calc(var(--space) * 2);
-
-		--fz-label:14px;
-		--fz-input:32px;
-		--fz-input-text:10px;
-
-		--input-w:158px;
-		--input-h:72px;
-
-		--fz-result:102px;
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg-color: #1d1a1f;
+		--card-color: #2e2931;
+		--text-color: #f0f0f0;
+		--input-color: #797777;
 	}
 }
 
+@media (min-width: $bkp-desktop) {
+	:root {
+		--space: 28px;
+		--btn-size: 96px;
+		--max-width: 840px;
+		--padding-h: calc(var(--space) * 2);
+
+		--fz-label: 14px;
+		--fz-input: 32px;
+		--fz-input-text: 10px;
+
+		--input-w: 158px;
+		--input-h: 72px;
+
+		--fz-result: 102px;
+	}
+}
